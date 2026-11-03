@@ -1,0 +1,7 @@
+Options -Indexes
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+<FilesMatch "^(config\.php|backup\.php|README\.txt)$">
+  Require all denied
+</FilesMatch>
